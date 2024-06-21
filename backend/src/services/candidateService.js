@@ -3,12 +3,9 @@ const candidateRepository = require('../database/repository/candidateRepository'
 
 class CandidateService {
     async createOrUpdateCandidate(data) {
-
-        console.log('createOrUpdateCandidate', data.data.email )
-        console.log('createOrUpdateCandidateData', data )
         let candidate = await candidateRepository.findByEmail(data.data.email);
         if (candidate) {
-            candidate = await candidateRepository.update(candidate, data.data);
+            candidate = await candidateRepository.update(candidate.email, data.data);
         } else {
             candidate = await candidateRepository.create(data.data);
         }
@@ -31,4 +28,5 @@ class CandidateService {
     }
 }
 
+// Singleton pattern
 module.exports = new CandidateService();

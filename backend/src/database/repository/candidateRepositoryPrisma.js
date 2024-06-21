@@ -15,9 +15,9 @@ class CandidateRepositoryPrisma extends CandidateRepositoryInterface {
         });
     }
 
-    async update(candidateId, data) {
+    async update(candidateEmail, data) {
         return prisma.candidate.update({
-            where: { id: candidateId },
+            where: { email: candidateEmail },
             data,
         });
     }

@@ -13,8 +13,8 @@ class CandidateRepository {
         return this.repository.create(data);
     }
 
-    async update(candidateId, data) {
-        return this.repository.update(candidateId, data);
+    async update(candidateEmail, data) {
+        return this.repository.update(candidateEmail, data);
     }
 }
 
