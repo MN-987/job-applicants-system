@@ -10,11 +10,14 @@
   "author": "Mostafa Nasser",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "prisma": "^5.15.1"
   },
   "dependencies": {
+    "@prisma/client": "^5.15.1",
     "amqplib": "^0.10.4",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
   }
 }
