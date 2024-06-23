@@ -1,6 +1,6 @@
 # Job Applicants System
 
-The Job Applicants System is a scalable web application designed for managing information about job candidates. It consists of a back-end service with API endpoints and a front-end application that integrates seamlessly with the back-end via these APIs. Leveraging an event-driven architecture with RabbitMQ, the system is built to handle large volumes of candidate data, designed to eventually support tens of thousands of records.<br> The project follows a layered architecture approach, emphasizing modularity, maintainability, and scalability to meet both current and future needs in candidate management.
+The Job Applicants System is a scalable web application designed for managing information about job candidates. It consists of a back-end service with API endpoints and a front-end application that integrates seamlessly with the back-end via these APIs. <br><br>Leveraging an event-driven architecture with RabbitMQ, the system is built to handle large volumes of candidate data, designed to eventually support tens of thousands of records.<br><br> The project follows a layered architecture approach, emphasizing modularity, maintainability, and scalability to meet both current and future needs in candidate management.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ If you don't have RabbitMQ installed, you can use the public Docker image by run
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9-management
 
 ```
-Then in your env file you will replace the RABBITMQ_URL with :
+Then in your backend env file you will replace the RABBITMQ_URL with :
 ```bash
 amqp://guest:guest@localhost:5672
 ```
