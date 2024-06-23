@@ -4,13 +4,13 @@ class MQService {
         this.connection = null;
         this.channel = null;
     }
-
     async connect() {
         try {
             this.connection = await amqp.connect(process.env.RABBITMQ_URL);
             this.channel = await this.connection.createChannel();
             console.log('Connected to RabbitMQ');
         } catch (error) {
+            // add error handling logic here later
             console.error('Failed to connect to RabbitMQ', error);
             process.exit(1);
         }
