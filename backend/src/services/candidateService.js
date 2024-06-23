@@ -29,4 +29,4 @@ class CandidateService {
 }
 
 // Singleton pattern
-module.exports = new CandidateService();
+module.exports =  CandidateService;

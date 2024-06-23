@@ -17,15 +17,5 @@ const candidateDataSchema = Joi.object({
   data: candidateDataSchema.required()
 });
 
-// const validateCandidateUpdate = Joi.object().required().keys({
-// firstName: Joi.string().optional(),
-//   lastName: Joi.string().optional(),
-//   phoneNumber: Joi.string().pattern(new RegExp('^[0-9]{3}-[0-9]{3}-[0-9]{4}$')).optional(),
-//   email: Joi.string().email().required(),
-//   bestCallTime : Joi.string().optional(),
-//   linkedInUrl : Joi.string().uri().optional(),
-//   githubUrl   : Joi.string().uri().optional(),
-//   comment: Joi.string().optional()
-// }
-// )
+ 
 module.exports = {createCandidateSchema};
