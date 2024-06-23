@@ -5,7 +5,7 @@ import FormHeader from "../ui/FormHeader";
 import InputBox from "../ui/InputBox";
 import { useNavigate } from "react-router-dom";
 import { saveFormData } from "../services/form/form.service";
-
+import React from "react";
 function FormPage() {
   const navigate = useNavigate();
   const {
@@ -54,6 +54,7 @@ function FormPage() {
             <label htmlFor="firstName">First Name</label>
             <input
               {...register("firstName", { required: "First Name is required" })}
+              data-testid="firstName"
               type="text"
               id="firstName"
               placeholder="Enter your first name"
@@ -66,6 +67,7 @@ function FormPage() {
             <label htmlFor="lastName">Last Name</label>
             <input
               {...register("lastName", { required: "Last Name is required" })}
+              data-testid="lastName"
               type="text"
               id="lastName"
               placeholder="Enter your last name"
@@ -84,6 +86,7 @@ function FormPage() {
                   message: "Invalid email address",
                 },
               })}
+              data-testid="email"
               type="email"
               id="email"
               placeholder="Enter your email"
@@ -101,6 +104,7 @@ function FormPage() {
                   message: "Invalid phone number",
                 },
               })}
+              data-testid="phoneNumber"
               type="text"
               id="phoneNumber"
               placeholder="Enter your phone number"
@@ -113,6 +117,7 @@ function FormPage() {
             <label htmlFor="linkedInUrl">LinkedIn Link</label>
             <input
               {...register("linkedInUrl")}
+              data-testid="linkedInUrl"
               type="text"
               id="linkedInUrl"
               placeholder="Enter your LinkedIn link"
@@ -123,6 +128,7 @@ function FormPage() {
             <label htmlFor="githubUrl">GitHub Profile Link</label>
             <input
               {...register("githubUrl")}
+              data-testid="githubUrl"
               type="text"
               id="githubUrl"
               placeholder="Enter your GitHub profile link"
@@ -134,6 +140,7 @@ function FormPage() {
             <input
               {...register("bestCallTime")}
               type="text"
+              data-testid="bestCallTime"
               id="bestCallTime"
               placeholder="Enter your time interval"
               className={inputClass}
@@ -144,6 +151,7 @@ function FormPage() {
             <textarea
               {...register("comment", { required: "Message is required" })}
               id="comment"
+              data-testid="comment"
               rows="4"
               className="bg-transparent border-b-2 border-gray-400 focus:outline-none focus:border-darkBrown p-2 w-full"
               placeholder="Write your thoughts here..."
@@ -154,6 +162,7 @@ function FormPage() {
           <div className="flex">
             <button
               type="submit"
+              data-testid="submit-button"
               className="bg-darkBrown text-white py-2 px-4 rounded disabled:bg-gray-300 disabled:cursor-not-allowed"
              >
               Submit
