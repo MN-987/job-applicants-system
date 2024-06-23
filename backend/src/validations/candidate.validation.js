@@ -4,11 +4,11 @@ const Joi = require('joi');
 const candidateDataSchema = Joi.object({
   firstName: Joi.string().min(3).max(12).trim().required(),
   lastName: Joi.string().min(3).max(12).trim().required(),
-  phoneNumber: Joi.string().pattern(new RegExp('^[0-9]{3}-[0-9]{3}-[0-9]{4}$')).optional(),
+  phoneNumber: Joi.string(),
   email: Joi.string().email().required(),
   bestCallTime: Joi.string().optional(),
-  linkedInUrl: Joi.string().uri().optional(),
-  githubUrl: Joi.string().uri().optional(),
+  linkedInUrl: Joi.string().optional(),
+  githubUrl: Joi.string().optional(),
   comment: Joi.string().required()
 });
 

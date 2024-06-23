@@ -4,13 +4,14 @@ import { useEffect } from "react";
 import FormHeader from "../ui/FormHeader";
 import InputBox from "../ui/InputBox";
 import { useNavigate } from "react-router-dom";
+import { saveFormData } from "../services/form/form.service";
 
 function FormPage() {
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     reset,
     setValue,
     trigger
@@ -34,6 +35,7 @@ function FormPage() {
   const onSubmit = (data) => {
     console.log(data);
     reset();
+    saveFormData(data);
     navigate('/form/submitted');
     localStorage.setItem(localStorageKey, JSON.stringify(data));
   };
@@ -49,28 +51,28 @@ function FormPage() {
         <FormHeader />
         <div className="space-y-4">
           <InputBox>
-            <label htmlFor="fName">First Name</label>
+            <label htmlFor="firstName">First Name</label>
             <input
-              {...register("fName", { required: "First Name is required" })}
+              {...register("firstName", { required: "First Name is required" })}
               type="text"
-              id="fName"
+              id="firstName"
               placeholder="Enter your first name"
               className={inputClass}
-              onBlur={() => trigger("fName")} 
+              onBlur={() => trigger("firstName")} 
             />
-            {errors.fName && <p className="text-red-500 text-xs">{errors.fName.message}</p>}
+            {errors.firstName && <p className="text-red-500 text-xs">{errors.firstName.message}</p>}
           </InputBox>
           <InputBox>
-            <label htmlFor="lName">Last Name</label>
+            <label htmlFor="lastName">Last Name</label>
             <input
-              {...register("lName", { required: "Last Name is required" })}
+              {...register("lastName", { required: "Last Name is required" })}
               type="text"
-              id="lName"
+              id="lastName"
               placeholder="Enter your last name"
               className={inputClass}
-              onBlur={() => trigger("lName")}
+              onBlur={() => trigger("lastName")}
             />
-            {errors.lName && <p className="text-red-500 text-xs">{errors.lName.message}</p>}
+            {errors.lastName && <p className="text-red-500 text-xs">{errors.lastName.message}</p>}
           </InputBox>
           <InputBox>
             <label htmlFor="email">Email</label>
@@ -108,53 +110,52 @@ function FormPage() {
             {errors.phoneNumber && <p className="text-red-500 text-xs">{errors.phoneNumber.message}</p>}
           </InputBox>
           <InputBox>
-            <label htmlFor="linkedinLink">LinkedIn Link</label>
+            <label htmlFor="linkedInUrl">LinkedIn Link</label>
             <input
-              {...register("linkedinLink")}
+              {...register("linkedInUrl")}
               type="text"
-              id="linkedinLink"
+              id="linkedInUrl"
               placeholder="Enter your LinkedIn link"
               className={inputClass}
             />
           </InputBox>
           <InputBox>
-            <label htmlFor="githubLink">GitHub Profile Link</label>
+            <label htmlFor="githubUrl">GitHub Profile Link</label>
             <input
-              {...register("githubLink")}
+              {...register("githubUrl")}
               type="text"
-              id="githubLink"
+              id="githubUrl"
               placeholder="Enter your GitHub profile link"
               className={inputClass}
             />
           </InputBox>
           <InputBox>
-            <label htmlFor="time">Time interval when it’s better to call (if needed)</label>
+            <label htmlFor="bestCallTime">Time interval when it’s better to call (if needed)</label>
             <input
-              {...register("time")}
+              {...register("bestCallTime")}
               type="text"
-              id="time"
+              id="bestCallTime"
               placeholder="Enter your time interval"
               className={inputClass}
             />
           </InputBox>
           <InputBox>
-            <label htmlFor="message">Your Message</label>
+            <label htmlFor="comment">Your Message</label>
             <textarea
-              {...register("message", { required: "Message is required" })}
-              id="message"
+              {...register("comment", { required: "Message is required" })}
+              id="comment"
               rows="4"
               className="bg-transparent border-b-2 border-gray-400 focus:outline-none focus:border-darkBrown p-2 w-full"
               placeholder="Write your thoughts here..."
-              onBlur={() => trigger("message")} 
+              onBlur={() => trigger("comment")} 
             ></textarea>
-            {errors.message && <p className="text-red-500 text-xs">{errors.message.message}</p>}
+            {errors.comment && <p className="text-red-500 text-xs">{errors.message.comment}</p>}
           </InputBox>
           <div className="flex">
             <button
               type="submit"
               className="bg-darkBrown text-white py-2 px-4 rounded disabled:bg-gray-300 disabled:cursor-not-allowed"
-              disabled={!isValid} 
-            >
+             >
               Submit
             </button>
           </div>
