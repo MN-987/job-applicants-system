@@ -28,5 +28,5 @@ class CandidateService {
     }
 }
 
-// Singleton pattern
+ 
 module.exports =  CandidateService;
