@@ -60,6 +60,11 @@ Follow these steps to install and run the Job Applicants System:
    npx prisma migrate dev --name init
    ```
 
+5. To run test write this command in each directory :
+```bash
+npm run test
+```
+
 # Usage
 
 Send a POST request using the frontend or Postman to `/api/v1/apply` with the following JSON object in the request body:
@@ -79,3 +84,16 @@ Send a POST request using the frontend or Postman to `/api/v1/apply` with the fo
     }
 }
 ```
+
+
+# Note:
+ if yor enocounter error while testing with jest in the Frontend 
+you need to hardocde the url in the axios instance  present in the config file in the service folder </br>
+e.g replace baseURL:  ``` import.meta.env.VITE_REACT_APP_backend_URL  ``` with </br>
+baseURL:``` 'http://localhost:5000/api/' ``` </br>
+or ``` process.env.REACT_APP_BACKEND_URL ``` </br
+
+
+#Total Hours spend on the task : 8 hours 
+
+
