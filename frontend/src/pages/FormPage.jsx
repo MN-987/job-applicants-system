@@ -51,7 +51,9 @@ function FormPage() {
         <FormHeader />
         <div className="space-y-4">
           <InputBox>
-            <label htmlFor="firstName">First Name</label>
+            <label htmlFor="firstName">First Name
+            <span className="text-red-500 ml-1">*</span>
+            </label>
             <input
               {...register("firstName", { required: "First Name is required" })}
               data-testid="firstName"
@@ -64,7 +66,9 @@ function FormPage() {
             {errors.firstName && <p className="text-red-500 text-xs">{errors.firstName.message}</p>}
           </InputBox>
           <InputBox>
-            <label htmlFor="lastName">Last Name</label>
+            <label htmlFor="lastName">Last Name
+            <span className="text-red-500 ml-1">*</span>
+            </label>
             <input
               {...register("lastName", { required: "Last Name is required" })}
               data-testid="lastName"
@@ -77,7 +81,9 @@ function FormPage() {
             {errors.lastName && <p className="text-red-500 text-xs">{errors.lastName.message}</p>}
           </InputBox>
           <InputBox>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email
+            <span className="text-red-500 ml-1">*</span>
+            </label>
             <input
               {...register("email", {
                 required: "Email is required",
@@ -147,7 +153,9 @@ function FormPage() {
             />
           </InputBox>
           <InputBox>
-            <label htmlFor="comment">Your Message</label>
+            <label htmlFor="comment">Your Message
+            <span className="text-red-500 ml-1">*</span>
+            </label>
             <textarea
               {...register("comment", { required: "Message is required" })}
               id="comment"

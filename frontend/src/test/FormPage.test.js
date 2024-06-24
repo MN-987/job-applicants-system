@@ -28,28 +28,4 @@ describe('FormPage', () => {
     expect(screen.getByTestId(/comment/i)).toBeInTheDocument();
     expect(screen.getByTestId(/submit-button/i)).toBeInTheDocument();
   });
-
-  // test('submits the form with valid data', () => {
-  //   render(
-  //     <BrowserRouter>
-  //       <FormPage />
-  //     </BrowserRouter>
-  //   );
-
-  //   fireEvent.change(screen.getByTestId(/firstName/i), { target: { value: 'John' } });
-  //   fireEvent.change(screen.getByTestId(/lastName/i), { target: { value: 'Doe' } });
-  //   fireEvent.change(screen.getByTestId(/email/i), { target: { value: 'john.doe@example.com' } });
-  //   fireEvent.change(screen.getByTestId(/phoneNumber/i), { target: { value: '1234567890' } });
-  //   fireEvent.change(screen.getByTestId(/linkedInUrl/i), { target: { value: 'https://linkedin.com/in/johndoe' } });
-  //   fireEvent.change(screen.getByTestId(/githubUrl/i), { target: { value: 'https://github.com/johndoe' } });
-  //   fireEvent.change(screen.getByTestId(/bestCallTime/i), { target: { value: '9am-5pm' } });
-  //   fireEvent.change(screen.getByTestId(/comment/i), { target: { value: 'This is a test message.' } });
-
-  //   fireEvent.click(screen.getByTestId(/submit-button/i));
-
-  //   expect(screen.queryByText(/First Name is required/i)).toBeNull();
-  //   expect(screen.queryByText(/Last Name is required/i)).toBeNull();
-  //   expect(screen.queryByText(/Email is required/i)).toBeNull();
-  //   expect(screen.queryByText(/Message is required/i)).toBeNull();
-  // });
 });
