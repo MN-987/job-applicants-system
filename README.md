@@ -94,7 +94,7 @@ baseURL:``` 'http://localhost:5000/api/' ``` </br>
 or ``` process.env.REACT_APP_BACKEND_URL ``` </br
 
 
-# Total Hours spend on the task : 8 hours 
+## Total Hours spend on the task : 8 hours 
 
 # List of ways for improvement:
 - Making a Docker image from the app for easy deployments and in case we want to make this project work as a microservice since I followed an event-driven approach with the help of rabbitmq and queues.
