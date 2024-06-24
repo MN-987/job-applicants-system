@@ -9,7 +9,6 @@ async function startWorker() {
         if (type && data) {
             await service.processEvent({type , data});
         }
-        // Handle other event types as needed
     });
 }
 
