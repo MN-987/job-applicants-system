@@ -91,7 +91,7 @@ Send a POST request using the frontend or Postman to `/api/v1/apply` with the fo
 you need to hardocde the url in the axios instance  present in the config file in the service folder </br>
 e.g replace baseURL:  ``` import.meta.env.VITE_REACT_APP_backend_URL  ``` with </br>
 baseURL:``` 'http://localhost:5000/api/' ``` </br>
-or ``` process.env.REACT_APP_BACKEND_URL ``` </br
+or ``` process.env.REACT_APP_BACKEND_URL ``` </br>
 
 
 ## Total Hours spend on the task : 8 hours 
